@@ -59,6 +59,7 @@ export const addCollAndDocs = async (collectionKey, objectsToAdd) => {
   await batch.commit();
   console.log("commited data to firestore");
 };
+
 export const createUserDocumentFromAuth = async (
   userAuth,
   additionalInfo = {}
