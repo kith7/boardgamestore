@@ -10,6 +10,11 @@ body {
   padding: 20px 40px;
 }
 
+#root {
+  max-width: 1640px;
+  margin: 0 auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -18,4 +23,15 @@ code {
 a {
   color: rgb(39, 39, 39);
   text-decoration: none;
+}
+
+.logo {
+  fill: cornflowerblue;
+}
+.logo:hover {
+  fill: rgba(100, 148, 237, 0.582);
+}
+
+div.Capa_1 {
+  fill: cornflowerblue;
 }

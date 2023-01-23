@@ -33,14 +33,14 @@ export const Body = styled.div`
 `;
 
 export const DirectoryItemContainer = styled.div`
-  min-width: 30%;
+  min-width: 40%;
   height: 240px;
   flex: 1 1 auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid black;
-  margin: 0 7.5px 15px;
+  border: 1px solid blue;
+  margin: 0 12.5px 25px;
   overflow: hidden;
   &:hover {
     cursor: pointer;

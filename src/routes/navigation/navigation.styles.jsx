@@ -6,12 +6,12 @@ export const NavigationContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 25px;
+  margin-bottom: 60px;
 `;
 
 export const LogoContainer = styled(Link)`
   height: 100%;
-  width: 70px;
+  width: 100px;
   padding: 25px;
 `;
 export const NavLinksContaier = styled.div`
@@ -25,6 +25,7 @@ export const NavLinksContaier = styled.div`
 export const NavLink = styled(Link)`
   padding: 10px 15px;
   cursor: pointer;
+  color: cornflowerblue;
 `;
 // .navigation {
 
