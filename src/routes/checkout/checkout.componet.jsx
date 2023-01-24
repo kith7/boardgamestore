@@ -10,6 +10,7 @@ import PaymentForm from "../../components/payment-form/payment-form.component";
 import "./checkout.styles.scss";
 const Checkout = () => {
   const cartItems = useSelector(selectCartItems);
+  console.log(cartItems);
   const cartTotal = useSelector(selectCartTotal);
 
   return (
@@ -35,7 +36,10 @@ const Checkout = () => {
         {cartItems.map((cartItem) => {
           return (
             <>
-              <CheckoutItem key={cartItem.id} cartItem={cartItem} />
+              <CheckoutItem
+                key={cartItem.name + "_incart"}
+                cartItem={cartItem}
+              />
             </>
           );
         })}

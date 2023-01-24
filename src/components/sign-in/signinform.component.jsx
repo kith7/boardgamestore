@@ -16,6 +16,7 @@ const defaultFormValues = {
 
 const SignInForm = () => {
   const [fields, setFormFields] = useState(defaultFormValues);
+  const [accError, setAccErr] = useState("");
   const { email, password } = fields;
   const resetFormFields = () => {
     setFormFields(defaultFormValues);
@@ -36,19 +37,21 @@ const SignInForm = () => {
       resetFormFields();
     } catch (err) {
       if (err.code === "auth/wrong-password") {
-        alert("incorrect password for email");
+        setAccErr("incorrect password for email");
         console.error("login error", err);
       }
       if (err.code === "auth/user-not-found") {
-        alert("Please register before loginig in");
+        setAccErr("Please register before loginig in");
       } else {
         console.error("login error", err);
+        setAccErr(err);
       }
     }
   };
   return (
     <div className='sign-up-container'>
       <h2>Already have an account</h2>
+      {accError && <p>{accError}</p>}
       <form onSubmit={handleSubmit}>
         <FormInput
           label='Email'

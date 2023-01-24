@@ -8,7 +8,6 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
-
 import {
   getFirestore,
   doc,
@@ -101,6 +100,34 @@ export const onAuthStateChangedListener = (callback) =>
 
 export const getCategoriesAndDocuments = async () => {
   const collectionRef = collection(db, "categories");
+  const q = query(collectionRef);
+  const querySnapshot = await getDocs(q);
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
+};
+
+export const createUserOrdersList = async (userAuth, purchasedItems) => {
+  if (!userAuth) return;
+  const createdDate = new Date();
+  const userDocRef = doc(db, "users", userAuth.uid, "orders");
+
+  const { itemID, title } = purchasedItems;
+  const newData = { title, date: createdDate, itemID };
+  try {
+    await setDoc(userDocRef, {
+      newData,
+    });
+  } catch (err) {
+    console.log(
+      "error while creating the item in the user orders collection",
+      err.message
+    );
+  }
+};
+
+export const getOrderedItems = async (userAuth) => {
+  if (!userAuth) return;
+  const collectionRef = collection(db, "users", userAuth.uid, "orders");
+  if (!collectionRef) return;
   const q = query(collectionRef);
   const querySnapshot = await getDocs(q);
   return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
