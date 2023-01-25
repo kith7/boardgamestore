@@ -47,3 +47,13 @@ div.Capa_1 {
   padding: 30px 30px 30px 30px;
   overflow: hidden;
 }
+
+@media screen and (max-width: 560px) {
+  .payment_card {
+    height: 360px;
+    min-width: 320px;
+    display: flex;
+    margin-top: 32px;
+    flex-direction: column;
+  }
+}

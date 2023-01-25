@@ -10,4 +10,13 @@
     display: flex;
     justify-content: space-between;
   }
+  @media screen and (max-width: 500px) {
+    .buttons-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 10px;
+    }
+  }
 }

@@ -30,6 +30,15 @@ export const Body = styled.div`
     font-weight: lighter;
     font-size: 16px;
   }
+  @media screen and (max-width: 500px) {
+    /* STYLES HERE */
+     {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: auto 0;
+    }
+  }
 `;
 
 export const DirectoryItemContainer = styled.div`
@@ -57,5 +66,21 @@ export const DirectoryItemContainer = styled.div`
   }
   &:last-child {
     margin-left: 7.5px;
+  }
+  @media screen and (max-width: 500px) {
+    /* STYLES HERE */
+     {
+      min-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px 0;
+    }
+    &:first-child {
+      margin-right: 0;
+    }
+    &:last-child {
+      margin-left: 0;
+    }
   }
 `;
