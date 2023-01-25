@@ -35,3 +35,15 @@ a {
 div.Capa_1 {
   fill: cornflowerblue;
 }
+
+.payment_card {
+  height: 260px;
+  width: 420px;
+  border-radius: 20px;
+  background: rgba(100, 148, 237, 0.055);
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(100, 148, 237, 0.089);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+  padding: 30px 30px 30px 30px;
+  overflow: hidden;
+}
